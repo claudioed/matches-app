@@ -49,7 +49,7 @@ func main() {
 		AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
 	}))
 
-	e.Static("/static", "assets")
+	e.Static("/static", "assets/api-docs")
 
 	// Server
 	e.GET("/api/matches/:id", GetMatch)
