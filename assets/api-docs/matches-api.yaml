@@ -16,7 +16,7 @@ servers:
     url: 'https://bets.api.com'
     description: Production Environment
 paths:
-  '/matches/{match-id}':
+  '/matches/{match-id}':hgf
     summary: Get information about match
     get:
       tags:
