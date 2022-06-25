@@ -50,6 +50,7 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: "kong"
     konghq.com/override: matches-do-not-preserve-host
+    konghq.com/plugins: prometheus-matches,matches-otel
 
   hosts:
     - paths:
