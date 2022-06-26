@@ -7,7 +7,6 @@ import (
 	"github.com/rs/zerolog"
 	"go.opentelemetry.io/contrib/instrumentation/github.com/labstack/echo/otelecho"
 	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/exporters/jaeger"
 	"go.opentelemetry.io/otel/propagation"
 	"go.opentelemetry.io/otel/sdk/resource"
@@ -115,10 +114,6 @@ type HealthData struct {
 }
 
 func GetMatch(c echo.Context) error {
-	id := c.Param("id")
-	_, span := tracer.Start(c.Request().Context(), "getMatch", oteltrace.WithAttributes(attribute.String("id", id)))
-	defer span.End()
-
 	m := &Match{
 		HomeTeam:     "Barcelona",
 		AwayTeam:     "Real Madrid",
